@@ -1,0 +1,10 @@
+baseURL = "https://news.wews.co/"
+languageCode = "en-us"
+title = "hugonews"
+theme = "hugonews"
+paginate = 20
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    site = "site"
