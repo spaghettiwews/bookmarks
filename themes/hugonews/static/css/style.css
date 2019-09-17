@@ -20,24 +20,24 @@ p {
     margin: 0;
 }
 
-header#header,
-footer#footer {
+#header,
+#footer {
     background: #d2d2d2;
     padding: 0.4rem 0.8rem;
     width: 960px;
 }
 
-header#header {
+#header {
     display: flex;
     justify-content: space-between;
 }
 
-header#header h1 {
+#header h1 {
     font-size: 0.8rem;
     margin: 0;
 }
 
-header#header h1 a {
+#header h1 a {
     color: #000000;
     text-decoration: none;
 }
@@ -58,7 +58,7 @@ nav a {
     text-decoration: none;
 }
 
-main#main {
+#main {
     background-color: #f5f5f5;
     width: 960px;
 }
@@ -110,4 +110,12 @@ ul.pagination li.active a {
 
 .single {
     padding: 1rem;
+}
+
+@media (max-width: 960px) {
+    #header,
+    #main,
+    #footer {
+        width: 100%;
+    }
 }
