@@ -2,7 +2,7 @@
 title: "Big Saturday Read: The death of Robert Mugabe"
 date: 2019-09-10T00:05:27+02:00
 itemurl: "https://www.bigsr.co.uk/single-post/2019/09/06/big-saturday-read-the-death-of-robert-mugabe/"
-site: "bigsr.co.uk"
+sites: "bigsr.co.uk"
 tags: ["mugabe", "zimbabwe"]
 draft: false
 ---

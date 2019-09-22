@@ -1,11 +1,9 @@
 {{ partial "header.html" . }}
-{{ $start := add (sub (mul .Paginator.PageSize .Paginator.PageNumber) .Paginator.PageSize) 1 }}
-<ol start={{ $start }}>
-    {{ range .Paginator.Pages }}
+<ol>
+    {{ range $key, $value := .Data.Terms.ByCount }}
     <li class="item">
-        <p class="item__urls"><a href="{{ .Permalink }}">{{ lower .Title }}</a></p>
+        <p class="item__urls"><a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a><span class="item__count">({{ $value.Count }})</span></p>
     </li>
     {{ end }}
 </ol>
-{{ template "_internal/pagination.html" . }}
 {{ partial "footer.html" . }}

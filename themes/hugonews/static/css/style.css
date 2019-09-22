@@ -69,7 +69,8 @@ nav a {
 }
 
 .item__siteurl,
-.item__siteurl > * {
+.item__siteurl > *,
+.item__count {
     color: #828282;
     font-size: .7rem;
     text-decoration: none;
@@ -83,6 +84,10 @@ nav a {
 .item__meta > * {
     color: #828282;
     margin-right: .5rem;
+}
+
+.item__count {
+    margin: 0 0 0 0.5rem;
 }
 
 ul.pagination {
