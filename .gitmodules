@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:spaghettiwews/news.wews.co.git
+	branch = master
