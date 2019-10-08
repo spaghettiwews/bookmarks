@@ -2,3 +2,7 @@
 	path = public
 	url = git@github.com:spaghettiwews/bookmarks.wews.co.git
 	branch = master
+[submodule "themes/hugonews"]
+	path = themes/hugonews
+	url = git@github.com:spaghettiwews/hugonews.git
+	branch = master
