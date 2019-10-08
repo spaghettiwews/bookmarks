@@ -1,6 +1,6 @@
-baseURL = "https://news.wews.co/"
+baseURL = "https://bookmarks.wews.co/"
 languageCode = "en-us"
-title = "hugonews"
+title = "the bookmarks of wews"
 theme = "hugonews"
 paginate = 20
 
