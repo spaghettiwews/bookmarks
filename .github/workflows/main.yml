@@ -33,4 +33,10 @@ jobs:
         OUTPUT_DIRECTORY: public/
       run: |
         cd $OUTPUT_DIRECTORY
-        git status
+        git add .
+        msg="rebuild site `date`"
+        if [ $# -eq 1 ]
+          then msg="$1"
+        fi
+        git commit -m "$msg"
+        git push origin master
