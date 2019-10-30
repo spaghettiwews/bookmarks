@@ -22,5 +22,6 @@ jobs:
       env:
         SOURCE_DIRECTORY: bookmarks/
       run: |
-        cd $SOURCE_DIRECTORY
-        hugo -v
+        echo $PWD
+        #cd $SOURCE_DIRECTORY
+        #hugo -v
