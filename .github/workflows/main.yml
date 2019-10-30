@@ -25,4 +25,10 @@ jobs:
         echo $PWD
         ls
         #cd $SOURCE_DIRECTORY
-        #hugo -v
+        hugo --verbose
+    - name: Deploy compiled site (commit and push to GH Pages repo)
+      env:
+        OUTPUT_DIRECTORY: public/
+      run: |
+        cd $OUTPUT_DIRECTORY
+        git status
