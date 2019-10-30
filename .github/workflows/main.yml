@@ -32,6 +32,8 @@ jobs:
       env:
         OUTPUT_DIRECTORY: public/
       run: |
+        git config --global user.email "spaghettiwews@outlook.com"
+        git config --global user.name "spaghettiwews"
         cd $OUTPUT_DIRECTORY
         git add .
         msg="rebuild site `date`"
