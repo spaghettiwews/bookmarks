@@ -23,5 +23,6 @@ jobs:
         SOURCE_DIRECTORY: bookmarks/
       run: |
         echo $PWD
+        ls
         #cd $SOURCE_DIRECTORY
         #hugo -v
