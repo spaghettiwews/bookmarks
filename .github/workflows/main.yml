@@ -1,0 +1,26 @@
+name: CI
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install hugo
+      run: |
+        echo "installing hugo"
+        sudo mkdir -p /home/hugo/
+        curl -L https://github.com/gohugoio/hugo/releases/download/v0.59.0/hugo_0.59.0_Linux-64bit.tar.gz | tar -zxf - --directory /home/hugo/
+        sudo mv /home/hugo/hugo /usr/bin/
+    - name: Build site
+      env:
+        SOURCE_DIRECTORY: bookmarks/
+      run: |
+        cd $SOURCE_DIRECTORY
+        hugo -v
