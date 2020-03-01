@@ -46,8 +46,8 @@ jobs:
           command: |
             #cd ..
             ls
-            #git submodule update --remote
-            #git status
+            git submodule update --remote
+            git status
             #git add .
             #git commit -m "update public submodule `date`"
             #git push origin master
