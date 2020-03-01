@@ -41,7 +41,10 @@ jobs:
             fi
             git commit -m "$msg"
             git push origin master
+      - run:
+          name: Update public submodule
+          command: |            
             cd ..
             git add .
-            git commit -m "update submodule `date`"
+            git commit -m "update public submodule `date`"
             git push origin master
