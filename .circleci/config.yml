@@ -1,0 +1,46 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.10-stretch-node-browsers-legacy
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "7c:f3:79:b1:72:b0:a1:de:a7:c2:59:e9:c2:ff:c2:fc"
+      - run:
+          name: Install dependencies
+          command: |
+            cd ~
+            wget https://github.com/gohugoio/hugo/releases/download/v0.64.1/hugo_extended_0.64.1_Linux-64bit.deb
+            sudo dpkg -i hugo*.deb
+            hugo version
+      - checkout
+      - run:
+          name: Checkout the submodules
+          command: |
+            git submodule sync --recursive
+            git submodule update --recursive --init
+            cd public
+            git checkout master
+            cd ..
+      - run:
+          name: Build site from source
+          command: hugo
+      - run:
+          name: Deploy site
+          command: |
+            git config --global user.email "spaghettiwews@outlook.com"
+            git config --global user.name "spaghettiwews"
+            cd public
+            git add .
+            msg="rebuilding site `date`"
+            if [ $# -eq 1 ]
+              then msg="$1"
+            fi
+            git commit -m "$msg"
+            git push origin master
+            cd ..
+            git add .
+            git commit -m "update submodule `date`"
+            git push origin master
