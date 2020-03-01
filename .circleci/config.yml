@@ -43,8 +43,11 @@ jobs:
             git push origin master
       - run:
           name: Update public submodule
-          command: |            
+          command: |
             cd ..
-            git add .
-            git commit -m "update public submodule `date`"
-            git push origin master
+            ls
+            git submodule update --remote
+            git status
+            #git add .
+            #git commit -m "update public submodule `date`"
+            #git push origin master
