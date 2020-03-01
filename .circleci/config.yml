@@ -44,7 +44,7 @@ jobs:
       - run:
           name: Update public submodule
           command: |
-            cd ..
+            #cd ..
             ls
             #git submodule update --remote
             #git status
