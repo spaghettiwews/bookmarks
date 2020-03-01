@@ -34,20 +34,20 @@ jobs:
             git config --global user.email "spaghettiwews@outlook.com"
             git config --global user.name "spaghettiwews"
             cd public
-            git add .
+            #git add .
             msg="rebuilding site `date`"
             if [ $# -eq 1 ]
               then msg="$1"
             fi
-            git commit -m "$msg"
-            git push origin master
+            #git commit -m "$msg"
+            #git push origin master
       - run:
           name: Update public submodule
           command: |
             cd ..
             ls
-            git submodule update --remote
-            git status
+            #git submodule update --remote
+            #git status
             #git add .
             #git commit -m "update public submodule `date`"
             #git push origin master
