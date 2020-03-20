@@ -21,6 +21,7 @@ jobs:
           mkdir ~/.ssh
           echo "${{ secrets.GH_ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com
       - uses: actions/checkout@v1
       - name: "checkout"
         run: |
