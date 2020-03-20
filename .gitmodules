@@ -1,3 +1,7 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/spaghettiwews/bookmarks.wews.co.git
+	branch = master
 [submodule "themes/hugonews"]
 	path = themes/hugonews
 	url = https://github.com/spaghettiwews/hugonews.git
