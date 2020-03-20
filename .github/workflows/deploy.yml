@@ -34,8 +34,6 @@ jobs:
         run: hugo
       - name: "deploy compiled files"
         run: |
-          pwd
-          git remote -v
           git config --global user.email "spaghettiwews@outlook.com"
           git config --global user.name $GITHUB_ACTOR
           cd public
@@ -45,4 +43,7 @@ jobs:
             then msg="$1"
           fi
           git commit -m "$msg"
-          git push origin master
+          git status
+          git remote -v
+          pwd
+          #git push origin master
