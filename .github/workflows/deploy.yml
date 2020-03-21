@@ -36,11 +36,13 @@ jobs:
         run: |
           git config --global user.email "spaghettiwews@outlook.com"
           git config --global user.name $GITHUB_ACTOR
-          cd public
-          git add .
           msg="rebuilding site `date`"
           if [ $# -eq 1 ]
             then msg="$1"
           fi
-          git commit -m "$msg"
-          git push origin master
+          cd public
+          if ! git diff --no-ext-diff --quiet --exit-code; then
+            git add .
+            git commit -m "$msg"
+            git push origin master
+          fi
