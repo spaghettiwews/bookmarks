@@ -43,9 +43,4 @@ jobs:
             then msg="$1"
           fi
           git commit -m "$msg"
-          git status
-          git remote -v
-          pwd
-          eval $(ssh-agent)
-          ssh-add ~/.ssh/id_rsa
           git push origin master
